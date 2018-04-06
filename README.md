@@ -1,4 +1,4 @@
-# htttp://r0wan.com/
+# http://r0wan.com/
 
 portfolio website showing games/fonts/etc... that I've worked on.
 

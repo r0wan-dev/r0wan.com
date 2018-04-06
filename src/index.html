@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<script src="jquery.js"></script>
+		<script>
+			//made by https://twitter.com/tophtacular
+			$(document).ready(function(){
+			  $('a').click(function(e) {
+			  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				if (target.length) {
+				  let itemParent = $(this).parent().hasClass('item') ? $(this).parent() : $(this).parent().parent();
+				  itemParent.animate({
+					scrollTop: itemParent.scrollTop() + target.offset().top
+				  }, 600);
+				  return false;
+				}
+			  }
+			  });
+			});
+		</script>
+		<style>
+			.grow { transition: all .2s ; }
+			.grow:hover { transform: scale(1.2); }
+			body {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 17px;
+			}
+			.logo {
+				width: 100%;
+				max-width: 256px;
+				margin: auto;
+				padding-top:10px;
+			}
+			.sub-logo {
+				width: 10%;
+				max-width: 128px;
+				min-width:64px;
+				margin: auto;
+				padding-top:10px;
+			}
+			a {
+				color:#100052DD;
+			}
+			a:hover {
+				color:#2096dd;
+			}
+			.bg{
+				z-index:-1;
+				opacity:1;
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position:absolute;
+			}
+			.bg.n01 {
+				background-image: url('images/bg01.png');
+				opacity:0.9;
+			}
+			.bg.n02 {
+				background-image: url('images/bg02.png');
+			}
+			.bg.n03 {
+				background-image: url('images/bg03.png');
+			}
+			body {
+				overflow-x: hidden;
+				padding: 0px;
+				color:white;
+				display: table;
+				width: 100%;
+				min-height: 100vh;
+				margin: auto;
+				max-width: 1080px;
+				position: relative;
+			}
+			.item {
+			  width: 60%;
+			  min-width: 200px;
+			  height: 200px;
+			  margin: auto;
+			  margin-top: 40px;
+			  overflow: hidden;
+			  border-radius: 25px;
+			}
+
+			.item-img {
+				width: 100%;
+				height: 200px;
+				margin: 0px;
+				padding: 0px;
+				background-color: #FFFFFF;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			.item-info {
+			  display: block;
+			  background-color: rgba(255,255,255,0.8);
+			  height: 200px;
+			  margin: 0px;
+			  width: 100%;
+			}
+			.item-icons {
+			  display: block;
+			  background-color: #100052DD;
+			  height: 50px;
+			}
+			.item-icon {
+				margin-top:7.5px;
+				margin-left:1em;
+				height:70%;
+			}
+			@media (max-width: 800px) {
+				.item {
+				  width: 80%;
+				}
+			}
+			@media (max-width: 600px) {
+				.item {
+				  width: 100%;
+				  border-radius: 0px;
+				}
+			}
+			@media (any-pointer: coarse) {
+				.logo {
+					max-width: 512px;
+				}
+				.item {
+				  width: 100%;
+				  border-radius: 0px;
+				  min-height:400px;
+				}
+				body {
+					font-size: 25px;
+				}
+				.sub-logo {
+					width:20%;
+				}
+				.item-img {
+					height:400px;
+				}
+				.dclogo {
+					width:60% !important;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="home">
+			<div class="bg n01" style="width:100%;height:100%;"></div>
+			<div class="container">
+				<div class="logo">
+					<img src="images/logo.svg" alt="logo" class="logo"/>
+				</div>
+				<div style="text-align:center">
+					<a href="https://twitter.com/r0wan_dev/"><img src="images/bird_logo.svg" alt="twitter" class="grow sub-logo"/></a>
+					<a href="https://github.com/r0wan-dev/"><img src="images/github_logo.svg" alt="github" class="grow sub-logo"/></a>
+					<a href="https://r0wan.itch.io/"><img src="images/itch_logo.svg" alt="itch.io" class="grow sub-logo"/></a>
+					<a href="https://www.youtube.com/channel/UCL-N59AqyaGp9NtZMlnhXWg/"><img src="images/play_logo.svg" alt="youtube" class="grow sub-logo"/></a>
+				</div>
+				<br>
+			</div>
+		</div>
+		<div id="items" style="padding-bottom:80px; background-color:#FFFFFF">
+			<br>
+			<div class="item">
+			  <div id="img01" style="top:-250px; position:absolute"></div>
+			  <a href="#inf01">
+				<div class="item-img" style="background-image:url(images/dc_bg.svg)"><img class=" dclogo" style="max-height:90%; min-width:190px; width:40%; max-width:512px; display: block; margin:auto; padding-top:5%" src="images/dc_logo.svg"/></div>
+			  </a>
+			  <div id="inf01" class="item-info">
+				<a href="#img01">
+				  <div class="item-icons" style="background-color:#100624AA;">
+					<img src="images/windows_logo.svg" alt="windows" class="item-icon"/><img src="images/steam_logo.svg" alt="steam" class="item-icon"/>
+				  </div>
+				</a>
+				<div style="padding:10px; height:130px; color:black;">
+					<strong>drifting cloud</strong>
+					<br>
+					a multiplayer action arcade game created by Rowan Douglas
+					<br>
+					the official website is <a href="http://drifting.cloud/">drifting.cloud</a>
+					<br>
+					you can buy it on steam <a href="http://store.steampowered.com/app/773710/">(here)</a>
+				</div>
+			  </div>
+			</div>
+			<div class="item">
+			  <div id="img01" style="top:-250px; position:absolute"></div>
+			  <a href="#inf01">
+				<div class="item-img" style="background-image:url(images/pt_bg.png)"><img style="max-height:90%; display: block; margin:auto; padding-top:10px" src="images/pt_logo.png"/></div>
+			  </a>
+			  <div id="inf01" class="item-info">
+				<a href="#img01">
+				  <div class="item-icons" style="background-color:#ac3232AA;">
+					<img src="images/windows_logo.svg" alt="windows" class="item-icon"/><img src="images/itch_logo_black.svg" alt="itch.io" class="item-icon"/>
+				  </div>
+				</a>
+				<div style="padding:10px; height:130px; color:black;">
+					<strong>Pixel Theft</strong>
+					<br>
+					an action arcade game created by Rowan Douglas
+					<br>
+					download it on itch.io <a href="https://r0wan.itch.io/pixeltheft">(here)</a>
+				</div>
+			  </div>
+			</div>
+			
+		</div>
+	</body>
+</html>
